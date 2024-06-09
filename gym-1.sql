@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 10:04 AM
+-- Generation Time: Jun 10, 2024 at 12:29 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -77,7 +77,9 @@ INSERT INTO `lessen` (`id`, `training_id`, `instructor_id`, `date`, `time`, `loc
 (7, 6, 11, '2023-02-19', '15:20:39', 'roma', 22),
 (8, 3, 5, '2023-02-22', '14:26:29', 'USA', 12),
 (9, 7, 5, '2023-02-20', '10:00:00', 'Centrum', 50),
-(10, 3, 14, '2023-01-05', '00:00:00', 'Den Haag', 23);
+(10, 3, 14, '2023-01-05', '00:00:00', 'Den Haag', 23),
+(11, 2, 5, '2024-12-09', '11:15:00', 'Centrum', 8),
+(12, 5, 5, '2023-01-01', '12:13:00', 'Den Haag', 111);
 
 -- --------------------------------------------------------
 
@@ -115,13 +117,17 @@ CREATE TABLE `registration` (
 INSERT INTO `registration` (`id`, `payment`, `member_id`, `lesson_id`) VALUES
 (13, 0, 3, 1),
 (16, 0, 3, 2),
-(17, 0, 4, 2),
-(18, 0, 4, 3),
-(19, 0, 4, 1),
 (20, 0, 12, 6),
 (21, 0, 12, 2),
 (23, 0, 14, 6),
-(24, 0, 13, 6);
+(24, 0, 13, 6),
+(25, 0, 13, 10),
+(27, 0, 15, 2),
+(29, 0, 4, 1),
+(30, 0, 4, 6),
+(31, 0, 12, 11),
+(32, 0, 13, 7),
+(33, 0, 12, 9);
 
 -- --------------------------------------------------------
 
@@ -179,11 +185,13 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `lastname`, `birthday`, `gender`, `address`, `postcode`, `residence`, `username`) VALUES
 (3, 'max@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$7roSRGCWfs8EBiS0SByXuOHfvxPhTN60/Lwz9XVZ4NNW0oL/MxgZC', 'Mark', 'Marko', '2012-05-06', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Mark'),
 (4, 'Kon@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$EFoqSP9nRwSfLVkyp2Xr4Oy14h1tMar2qZSb236Eb5bCAzkVkPNka', 'Kon', 'Kon', '1992-02-03', 'Female', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Kon'),
-(5, 'sam@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$dvTGyMTHUrGGux15ENwpX.Cu3gSk61DxcYFSQkffudHf3fiEI8Lue', 'Sam', 'Sam', '1996-10-25', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Sam'),
+(5, 'sam@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$80lthktazGPa62WzQnztq.8JtGHnK11cqerZc5JRvDhZ16XviUI62', 'Sam', 'Sam', '1980-10-25', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Samm'),
 (11, 'rok@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$4y9RevozDOCM79KurkFHWO1YrbFnRcY33ZvjgU1zs..JPWBU6b2Ku', 'rok', 'rok', '1903-01-01', 'Male', 'roma', '1234', 'milan', 'rok'),
 (12, 'drago@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$ULk1X6k525TCw61iEDw0NOP7D7VCYpyqqr66BCroKcJTDkWfiAolq', 'drago', 'drago', '1920-03-12', 'Female', 'londen', '42232', 'UK', 'drago'),
-(13, 'Rambo@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$a1RwJAXac5vYEW5SENs/zuuuwu/P7qZVlnNm2By0JPToCXZBBTUuW', 'Rambo', 'Rony', '1994-11-18', 'Male', 'Amsterdamstraat', '1004AN', 'Delft', 'Rambo'),
-(14, 'Zakria@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$gA/T/Tqli8BQY5ZTGsNDi.G0vFppZXk2nqWnumBIp4R7TzZkjZ9i.', 'Zakria', 'Ennaji', '2000-10-04', 'Male', 'Amsterdamstraat', '1004AN', 'Den Haag', 'Zakria');
+(13, 'Rambo@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$Xrd5EvupCPLMQpJFemWO3ePnBpCbTm0Ro0WffFHcqcw04d/eUN0t6', 'Rambo', 'Rony', '1990-11-18', 'Male', 'Amsterdamstraat', '1004AN', 'Delft', 'Rambo'),
+(14, 'Zakria@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$gA/T/Tqli8BQY5ZTGsNDi.G0vFppZXk2nqWnumBIp4R7TzZkjZ9i.', 'Zakria', 'Ennaji', '2000-10-04', 'Male', 'Amsterdamstraat', '1004AN', 'Den Haag', 'Zakria'),
+(15, 'lang01Rrocmondriaan.nl', '[\"ROLE_MEMBER\"]', '$2y$13$dmmic5SFNdMMUWqql1s5w.CMqyfAde/FbOus6pAe3Ed4TCTW.11QC', 'Gijs', 'de Lange', '1996-12-27', 'Male', 'tinwerf 16', '2544ED', 'Den Haag', 'GdeLange'),
+(16, 'Jan@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$hv4iqsPwOrrG.zlgOT3wmeem3k9STuvycFwg9xsO8PCFFbkccyAbO', 'Jan', 'Jan', '1992-01-12', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Jann');
 
 --
 -- Indexes for dumped tables
@@ -241,7 +249,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lessen`
 --
 ALTER TABLE `lessen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `messenger_messages`
@@ -253,19 +261,19 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `training`
 --
 ALTER TABLE `training`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
