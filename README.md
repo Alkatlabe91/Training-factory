@@ -1,12 +1,12 @@
 ## Training-factory
-#Admin:
-email: max@gmail.com
+#Admin:<br/>
+email: max@gmail.com<br/>
 password: 123123
 
-#INSTRUCTOR
-email: sam@gmail.com
+#INSTRUCTOR<br/>
+email: sam@gmail.com<br/>
 password: 123123
 
-#Member
-email:Rambo@gmail.com
+#Member<br/>
+email:Rambo@gmail.com<br/>
 password: 123123
