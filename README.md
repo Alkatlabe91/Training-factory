@@ -1,3 +1,6 @@
+######You must first install composer using this command:<br/>
+composer install
+
 ## Training-factory
 #Admin:<br/>
 email: max@gmail.com<br/>
